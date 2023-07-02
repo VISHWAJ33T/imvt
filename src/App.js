@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Body from "./Components/Body";
+import Navbar from "./Components/Navbar";
 function App() {
+  const [title, setTitle] = useState("");
+  const [keyword, setKeyword] = useState("zombie");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {/* <BrowserRouter> */}
+        {/* <Routes> */}
+          <Navbar title={title} setTitle={setTitle} setKeyword={setKeyword} />
+        {/* </Routes> */}
+      {/* </BrowserRouter> */}
+      <Body title={title} setTitle={setTitle} keyword={keyword} />
     </div>
   );
 }
