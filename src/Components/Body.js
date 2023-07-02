@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BodyItem from "./BodyItem";
 import Search from "./Search";
 
@@ -12,15 +11,15 @@ export default function Body({ title, setTitle, keyword }) {
   const [services, setServices] = useState(
     "netflix,prime.buy,hulu.addon.hbo,peacock.free"
   );
-
-  let apiURL = `https://streaming-availability.p.rapidapi.com/v2/search/basic?rapidapi-key=bd18f5c7c7msh7ba7ed22e2fda0dp17a94bjsn0df5d1a57b29&country=${country}&show_type=${type}&services=${services}&genre=${genre}&keyword=${keyword}`;
+  const apiKey = process.env.REACT_APP_IMVT_API_KEY;
+  let apiURL = `https://streaming-availability.p.rapidapi.com/v2/search/basic?rapidapi-key=${apiKey}&country=${country}&show_type=${type}&services=${services}&genre=${genre}&keyword=${keyword}`;
   const updateBody = async () => {
     const data = await fetch(apiURL);
     let parsedData = await data.json();
     await setArticles(parsedData.result);
   };
 
-  let searchURL = `https://streaming-availability.p.rapidapi.com/v2/search/title?rapidapi-key=bd18f5c7c7msh7ba7ed22e2fda0dp17a94bjsn0df5d1a57b29&country=${country}&show_type=${type}&title=${title}`;
+  let searchURL = `https://streaming-availability.p.rapidapi.com/v2/search/title?rapidapi-key=${apiKey}&country=${country}&show_type=${type}&title=${title}`;
   const updateSearch = async () => {
     const data = await fetch(searchURL);
     let parsedData2 = await data.json();
