@@ -8,6 +8,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+a{
+  cursor:pointer;
+}
+
 .wrapper {
   background: #171c24;
   position: fixed;
@@ -548,3 +552,18 @@ ul {
   }
 }
 /* BODYITEM CSS ENDS HERE */
+
+/* NOTFOUND CSS STARTS HERE */
+.notFound{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:10px;
+  color:white;
+}
+.errorGIF{
+  margin:20px 0px;
+  width:350px
+}
+/* NOTFOUND CSS ENDS HERE */

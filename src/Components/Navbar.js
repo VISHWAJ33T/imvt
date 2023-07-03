@@ -40,7 +40,7 @@ export default function Navbar({
             </div>
             <ul class="links">
               <li>
-                <a href="#" class="desktop-link">
+                <a class="desktop-link">
                   Type: <em>{type}</em>
                 </a>
                 <input type="checkbox" id="show-features" />
@@ -50,7 +50,6 @@ export default function Navbar({
                 <ul>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setType("all");
                       }}
@@ -60,7 +59,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setType("movie");
                       }}
@@ -70,7 +68,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setType("series");
                       }}
@@ -82,7 +79,7 @@ export default function Navbar({
               </li>
 
               <li>
-                <a href="#" class="desktop-link">
+                <a class="desktop-link">
                   Genre: <em>{gvalue}</em>
                 </a>
                 <input type="checkbox" id="show-items" />
@@ -92,7 +89,6 @@ export default function Navbar({
                 <ul>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("28");
                         setGvalue("Action");
@@ -104,7 +100,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("12");
                         setGvalue("Adventure");
@@ -115,7 +110,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("16");
                         setGvalue("Animation");
@@ -126,7 +120,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("35");
                         setGvalue("Comedy");
@@ -137,7 +130,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("80");
                         setGvalue("Crime");
@@ -148,7 +140,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("18");
                         setGvalue("Drama");
@@ -159,7 +150,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("14");
                         setGvalue("Fantasy");
@@ -170,7 +160,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("27");
                         setGvalue("Horror");
@@ -181,7 +170,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("9648");
                         setGvalue("Mystery");
@@ -192,7 +180,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("27");
                         setGvalue("Romance");
@@ -203,7 +190,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("10749");
                         setGvalue("Sci-Fi");
@@ -214,7 +200,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setGenre("53");
                         setGvalue("Thriller");
@@ -227,15 +212,12 @@ export default function Navbar({
               </li>
 
               <li>
-                <a href="#" class="desktop-link">
-                  Services: {services}
-                </a>
+                <a class="desktop-link">Services: {services}</a>
                 <input type="checkbox" id="show-services" />
                 <label for="show-services">Services: {services}</label>
                 <ul>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setServices("prime");
                       }}
@@ -245,7 +227,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setServices("apple");
                       }}
@@ -255,7 +236,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setServices("disney");
                       }}
@@ -265,7 +245,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setServices("netflix");
                       }}
@@ -277,7 +256,7 @@ export default function Navbar({
               </li>
 
               <li>
-                <a href="#" class="desktop-link">
+                <a class="desktop-link">
                   Country : <em>{country}</em>
                 </a>
                 <input type="checkbox" id="show-things" />
@@ -287,7 +266,6 @@ export default function Navbar({
                 <ul>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setCountry("au");
                       }}
@@ -297,7 +275,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setCountry("fr");
                       }}
@@ -307,7 +284,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setCountry("de");
                       }}
@@ -317,7 +293,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setCountry("in");
                       }}
@@ -327,7 +302,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setCountry("it");
                       }}
@@ -337,7 +311,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setCountry("jp");
                       }}
@@ -347,7 +320,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setCountry("sg");
                       }}
@@ -357,7 +329,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setCountry("za");
                       }}
@@ -367,7 +338,6 @@ export default function Navbar({
                   </li>
                   <li>
                     <a
-                      href="#"
                       onClick={() => {
                         setCountry("us");
                       }}
