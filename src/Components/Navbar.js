@@ -85,8 +85,8 @@ export default function Navbar({
                 <a href="#" class="desktop-link">
                   Genre: <em>{gvalue}</em>
                 </a>
-                <input type="checkbox" id="show-services" />
-                <label for="show-services">
+                <input type="checkbox" id="show-items" />
+                <label for="show-items">
                   Genre: <em>{gvalue}</em>
                 </label>
                 <ul>
@@ -230,8 +230,8 @@ export default function Navbar({
                 <a href="#" class="desktop-link">
                   Services: {services}
                 </a>
-                {/* <input type="checkbox" id="show-items" /> */}
-                {/* <label for="show-items">More Items</label> */}
+                <input type="checkbox" id="show-services" />
+                <label for="show-services">Services: {services}</label>
                 <ul>
                   <li>
                     <a
@@ -280,8 +280,8 @@ export default function Navbar({
                 <a href="#" class="desktop-link">
                   Country : <em>{country}</em>
                 </a>
-                <input type="checkbox" id="show-items" />
-                <label for="show-items">
+                <input type="checkbox" id="show-things" />
+                <label for="show-things">
                   Country : <em>{country}</em>
                 </label>
                 <ul>

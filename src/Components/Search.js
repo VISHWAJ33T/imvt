@@ -5,7 +5,7 @@ export default function Search({ id, articles2 }) {
       <div className="bodyItems">
         <div className="bodyItem">
           <div className="bodyItemImage">
-          <a href={`https://www.imdb.com/title/${articles2[id].imdbId}/`} target="_blank">
+          <a href={`https://www.imdb.com/title/${articles2[id].imdbId}/`} rel="noreferrer" target="_blank">
             <img src={`${articles2[id].posterURLs[92]}`} alt="" /></a>
           </div>
           <div className="bodyItemDetails">
