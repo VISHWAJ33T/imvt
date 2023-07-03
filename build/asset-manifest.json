@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f7c6da38.css",
+    "main.js": "/static/js/main.c33e635d.js",
+    "static/media/loading.gif": "/static/media/loading.3fb26d9b3c3c823ae786.gif",
+    "static/media/ImVt Logo.png": "/static/media/ImVt Logo.38423adcdd0f82fc1952.png",
+    "index.html": "/index.html",
+    "main.f7c6da38.css.map": "/static/css/main.f7c6da38.css.map",
+    "main.c33e635d.js.map": "/static/js/main.c33e635d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7c6da38.css",
+    "static/js/main.c33e635d.js"
+  ]
+}
