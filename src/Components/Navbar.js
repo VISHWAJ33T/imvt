@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Logo from "./ImVt Logo.png";
 export default function Navbar({
+  apiKey,
+  setApiKey,
   setTitle,
   setKeyword,
   country,
@@ -29,8 +31,8 @@ export default function Navbar({
         <nav>
           <input type="checkbox" id="show-search" />
           <input type="checkbox" id="show-menu" />
-          <label for="show-menu" class="menu-icon">
-            <i class="fas fa-bars"></i>
+          <label htmlFor="show-menu" className="menu-icon">
+            <i className="fas fa-bars"></i>
           </label>
           <div className="content">
             <div className="logo">
@@ -38,13 +40,13 @@ export default function Navbar({
                 <img src={Logo} className="logoImg" alt="" />
               </a>
             </div>
-            <ul class="links">
+            <ul className="links">
               <li>
-                <a class="desktop-link">
+                <a className="desktop-link">
                   Type: <em>{type}</em>
                 </a>
                 <input type="checkbox" id="show-features" />
-                <label for="show-features">
+                <label htmlFor="show-features">
                   Type: <em>{type}</em>
                 </label>
                 <ul>
@@ -79,11 +81,11 @@ export default function Navbar({
               </li>
 
               <li>
-                <a class="desktop-link">
+                <a className="desktop-link">
                   Genre: <em>{gvalue}</em>
                 </a>
                 <input type="checkbox" id="show-items" />
-                <label for="show-items">
+                <label htmlFor="show-items">
                   Genre: <em>{gvalue}</em>
                 </label>
                 <ul>
@@ -212,9 +214,9 @@ export default function Navbar({
               </li>
 
               <li>
-                <a class="desktop-link">Services: {services}</a>
+                <a className="desktop-link">Services: {services}</a>
                 <input type="checkbox" id="show-services" />
-                <label for="show-services">Services: {services}</label>
+                <label htmlFor="show-services">Services: {services}</label>
                 <ul>
                   <li>
                     <a
@@ -256,11 +258,40 @@ export default function Navbar({
               </li>
 
               <li>
-                <a class="desktop-link">
+                <a className="desktop-link">
+                Api-Key
+                </a>
+                <input type="checkbox" id="show-keys" />
+                <label htmlFor="show-keys">
+                  Api-Key
+                </label>
+                <ul>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_1);
+                      }}
+                    >
+                      Api-Key 1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_2);
+                      }}
+                    >
+                      Api-Key 2
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a className="desktop-link">
                   Country : <em>{country}</em>
                 </a>
                 <input type="checkbox" id="show-things" />
-                <label for="show-things">
+                <label htmlFor="show-things">
                   Country : <em>{country}</em>
                 </label>
                 <ul>

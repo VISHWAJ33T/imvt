@@ -27,18 +27,18 @@ export default function BodyItem({ id, articles }) {
               }, 80)}
             </div>
 
-            <div class="ratings">
+            <div  className="ratings">
               <span className="rating">
-                <i class="fas fa-star" style={{ color: "#ffffff" }}></i>&nbsp;
+                <i  className="fas fa-star" style={{ color: "#ffffff" }}></i>&nbsp;
                 {articles[id].imdbRating}/100
               </span>
               <span className="nofRating">
-                <i class="fa fa-users" aria-hidden="true"></i>
+                <i  className="fa fa-users" aria-hidden="true"></i>
                 &nbsp;
                 {articles[id].imdbVoteCount}
               </span>
               <span className="minAge">
-                <i class="fa fa-user" aria-hidden="true"></i>
+                <i  className="fa fa-user" aria-hidden="true"></i>
                 &ge;
                 {articles[id].advisedMinimumAudienceAge}Yr
               </span>
