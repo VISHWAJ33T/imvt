@@ -4,8 +4,8 @@ export default function BodyItem({ id, articles }) {
     <>
       <div className="bodyItems">
         <div className="bodyItem">
-          <div className="bodyItemImage">
-            <img src={`${articles[id].posterURLs[92]}`} alt="" />
+          <div className="bodyItemImage"><a href={`https://www.imdb.com/title/${articles[id].imdbId}/`} target="_blank">
+            <img src={`${articles[id].posterURLs[92]}`} alt="" /></a>
           </div>
           <div className="bodyItemDetails">
             <h2 className="title">{articles[id].title}</h2>

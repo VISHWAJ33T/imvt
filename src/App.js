@@ -1,20 +1,21 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Body from "./Components/Body";
 import Navbar from "./Components/Navbar";
 function App() {
   const [title, setTitle] = useState("");
-  const [keyword, setKeyword] = useState("zombie");
-
+  const [keyword, setKeyword] = useState("");
+  const [country, setCountry] = useState("us");
+  const [type, setType] = useState("all");
+  const [genre, setGenre] = useState("35");
+  const [services, setServices] = useState(
+    // "netflix,prime.buy,hulu.addon.hbo,peacock.free"
+    "netflix"
+  );
   return (
     <div className="app">
-      {/* <BrowserRouter> */}
-        {/* <Routes> */}
-          <Navbar title={title} setTitle={setTitle} setKeyword={setKeyword} />
-        {/* </Routes> */}
-      {/* </BrowserRouter> */}
-      <Body title={title} setTitle={setTitle} keyword={keyword} />
+          <Navbar title={title} country={country} setCountry={setCountry} type={type} genre={genre} services={services} setType={setType} setGenre={setGenre} setServices={setServices} setTitle={setTitle} setKeyword={setKeyword} />
+      <Body title={title} country={country} setCountry={setCountry} type={type} genre={genre} services={services} setType={setType} setGenre={setGenre} setServices={setServices} setTitle={setTitle} keyword={keyword} />
     </div>
   );
 }

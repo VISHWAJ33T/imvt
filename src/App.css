@@ -143,10 +143,22 @@ nav .content .links {
 
 .content .links li:hover>ul {
   top: 70px;
+  z-index:100;
   opacity: 1;
+  /* display: block; */
   visibility: visible;
   transition: all 0.3s ease;
 }
+.content .links li ul:hover> li {
+  /* top: 70px; */
+  opacity: 1;
+  /* display: block; */
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+
+
 
 .content .links ul li a {
   display: block;
@@ -157,7 +169,7 @@ nav .content .links {
 
 .content .links ul ul {
   position: absolute;
-  top: 0;
+  top: 10;
   right: calc(-100% + 8px);
 }
 
@@ -340,6 +352,9 @@ ul {
   }
 }
 
+.logoImg{
+  width:100px;
+}
 /* HEADER AND FOOTER CSS ENDS HERE */
 
 /* BODY CSS STARTS HERE */
@@ -348,6 +363,18 @@ ul {
   padding-top: 80px;
   display: flex;
   flex-direction: column;
+}
+
+.spinnerOut{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  color:white;
+}
+
+.spinner{
+  width:100px;
 }
 
 /* BODY CSS ENDS HERE */
