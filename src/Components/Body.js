@@ -1,10 +1,10 @@
-import React, { useLayoutEffect, useRef, useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import LoadingBar from "react-top-loading-bar";
 import BodyItem from "./BodyItem";
 import NotFound from "./NotFound";
+import NotSearch from "./NotSearch";
 import Search from "./Search";
 import Spinner from "./Spinner";
-import NotSearch from "./NotSearch";
 export default function Body({
   apiKey,
   title,
@@ -13,6 +13,7 @@ export default function Body({
   type,
   genre,
   services,
+  pageArr,
 }) {
   const [progress, setProgress] = useState(0);
   const [articles, setArticles] = useState([]);
@@ -29,6 +30,14 @@ export default function Body({
   const handleNextClick = (e) => {
     e.preventDefault();
     articles.hasMore && setNextCursor(`&cursor=` + articles.nextCursor);
+    pageArr.push(articles.nextCursor);
+    console.log(pageArr);
+  };
+
+  const handlePrevClick = (e) => {
+    e.preventDefault();
+    pageArr[pageArr.length-1] && setNextCursor(`&cursor=` + pageArr[pageArr.length-2]);
+    pageArr.pop();
   };
   useLayoutEffect(() => {
     setWidth(ref.current.offsetWidth);
@@ -51,13 +60,13 @@ export default function Body({
   let searchURL = `https://streaming-availability.p.rapidapi.com/v2/search/title?rapidapi-key=${apiKey}&country=${country}&show_type=${type}&title=${title}`;
   const updateSearch = async () => {
     const data2 = await fetch(searchURL);
-    setLoading2(true);
+    // setLoading2(true);
     setProgress(10);
     let parsedData2 = await data2.json();
     setProgress(40);
     setArticles2(parsedData2.result);
     setProgress(80);
-    setLoading2(false);
+    // setLoading2(false);
     setProgress(100);
   };
 
@@ -82,6 +91,7 @@ export default function Body({
   }
 
   useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     updateBody();
   }, [apiKey, keyword, country, genre, services, type, width, nextCursor]);
 
@@ -99,9 +109,9 @@ export default function Body({
           : articles1[0] && { "--image-url": `url(${backdropImage1()})` }
       }
     >
-      {!articles2 && <NotSearch id="top" />}
+      {!articles2 && <NotSearch />}
       <LoadingBar color="white" progress={progress} height={1} />
-      {loading2 && loading1 && <Spinner />}
+      {loading1 && <Spinner />}
       {articles2 &&
         articles2.map((element, id, result) => {
           return <Search key={id} id={id} articles2={articles2} />;
@@ -111,9 +121,18 @@ export default function Body({
         articles1.map((element, id, result) => {
           return <BodyItem key={id} id={id} articles1={articles1} />;
         }, 80)}
-      <button href="#top" className="next" onClick={handleNextClick}>
-        Next
-      </button>
+      <div className="pagination">
+        {pageArr[pageArr.length-1] && (
+          <button className="prev" onClick={handlePrevClick}>
+            Previous
+          </button>
+        )}
+      {articles.hasMore && (
+        <button className="next" onClick={handleNextClick}>
+          Next
+        </button>
+      )}
+      </div>
       {!articles1 && !articles2 && <NotFound />}
     </div>
   );

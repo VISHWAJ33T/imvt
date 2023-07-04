@@ -10,7 +10,13 @@
 :root {
   --image-url: url('https://www.gamersdecide.com/sites/default/files/loading_screendota.jpg');
 }
-
+*::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+} 
 a{
   cursor:pointer;
 }
@@ -24,7 +30,7 @@ a{
 }
 
 .wrapper nav {
-  position: relative;
+  position: sticky;
   display: flex;
   max-width: calc(100% - 200px);
   margin: 0 auto;
@@ -407,7 +413,7 @@ ul {
 .bodyItems {
   display: flex;
   flex-direction: column;
-  width: 98vw;
+  width: 96vw;
   max-height: 350px;
   background-color: #171c24;
   opacity: 0.8;
@@ -592,9 +598,40 @@ ul {
 /* NOTFOUND CSS ENDS HERE */
 
 /* NEXT BTN */
+.pagination{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.prev{
+  padding:10px 20px;
+  min-width: 125px;
+  width:25vw;
+  text-align:center;
+  margin: 5px auto;
+  font-size:20px;
+  color: white;
+  background-color:#171d24;
+  border:0px;
+  border-radius:30px;
+  cursor: pointer;
+}
+.prev:hover{
+  background-color:#1d283d;
+  /* transform: scale(1.1); */
+  /* transform: translateX(px); */
+}
+.prev:active{
+  background-color:#18202e;
+  transform: scale(1.2);
+  transform: translateX(3px);
+  transition: 0.3s;
+}
 .next{
   padding:10px 20px;
-  width:100px;
+  min-width: 125px;
+  width:25vw;
   text-align:center;
   margin: 5px auto;
   font-size:20px;
@@ -612,6 +649,6 @@ ul {
 .next:active{
   background-color:#18202e;
   transform: scale(1.2);
-  /* transform: translateX(150vw); */
+  transform: translateX(3px);
   transition: 0.3s;
 }
