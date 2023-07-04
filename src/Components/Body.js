@@ -1,11 +1,11 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import LoadingBar from "react-top-loading-bar";
 import BodyItem from "./BodyItem";
+import NoResults from "./NoResults";
 import NotFound from "./NotFound";
 import NotSearch from "./NotSearch";
 import Search from "./Search";
 import Spinner from "./Spinner";
-import NoResults from "./NoResults";
 export default function Body({
   apiKey,
   title,
@@ -62,13 +62,13 @@ export default function Body({
   let searchURL = `https://streaming-availability.p.rapidapi.com/v2/search/title?rapidapi-key=${apiKey}&country=${country}&show_type=${type}&title=${title}`;
   const updateSearch = async () => {
     const data2 = await fetch(searchURL);
-    // setLoading2(true);
+    setLoading2(true);
     setProgress(10);
     let parsedData2 = await data2.json();
     setProgress(40);
     setArticles2(parsedData2.result);
     setProgress(80);
-    // setLoading2(false);
+    setLoading2(false);
     setProgress(100);
   };
 
@@ -113,8 +113,8 @@ export default function Body({
     >
       {!articles2 && <NotSearch />}
       <LoadingBar color="white" progress={progress} height={1} />
-      {(loading1 && <Spinner />) ||
-        (articles1 && articles1.length === 0 && <NoResults />)}
+      {((loading2 || loading1) && <Spinner />) ||
+        ((articles1 ||articles2) && articles1.length === 0 && articles2.length === 0 && <NoResults />)}
 
       {articles2 &&
         articles2.map((element, id, result) => {

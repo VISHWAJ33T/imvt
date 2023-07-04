@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Logo from "./ImVt Logo.png";
 export default function Navbar({
-  apiKey,
   setApiKey,
   setTitle,
   setKeyword,
@@ -17,6 +16,7 @@ export default function Navbar({
   const [value, setValue] = useState("");
   const [gvalue, setGvalue] = useState("Action");
   const [svalue, setSvalue] = useState("Amazon Prime");
+  const [apiNo, setApiNo] = useState("1");
   const handleOnChange = (event) => {
     setValue(event.target.value);
   };
@@ -340,17 +340,18 @@ export default function Navbar({
 
               <li>
                 <a className="desktop-link">
-                Api-Key
+                Api-Key: {apiNo}
                 </a>
                 <input type="checkbox" id="show-keys" />
                 <label htmlFor="show-keys">
-                  Api-Key
+                  Api-Key: {apiNo}
                 </label>
                 <ul>
                   <li>
                     <a
                       onClick={() => {
                         setApiKey(process.env.REACT_APP_IMVT_API_KEY_1);
+                        setApiNo("1")
                       }}
                     >
                       Api-Key 1
@@ -360,6 +361,7 @@ export default function Navbar({
                     <a
                       onClick={() => {
                         setApiKey(process.env.REACT_APP_IMVT_API_KEY_2);
+                        setApiNo("2")
                       }}
                     >
                       Api-Key 2
@@ -369,6 +371,7 @@ export default function Navbar({
                     <a
                       onClick={() => {
                         setApiKey(process.env.REACT_APP_IMVT_API_KEY_3);
+                        setApiNo("3")
                       }}
                     >
                       Api-Key 3
