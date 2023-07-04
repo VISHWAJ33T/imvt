@@ -1,15 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 export default function Search({ id, articles2 }) {
   return (
     <>
       <div className="bodyItems">
         <div className="bodyItem">
           <div className="bodyItemImage">
-          <a href={`https://www.imdb.com/title/${articles2[id].imdbId}/`} rel="noreferrer" target="_blank">
-            <img src={`${articles2[id].posterURLs[92]}`} alt="" /></a>
+            <Link to={`/play/${articles2[id].imdbId}`} target="_blank">
+              <img src={`${articles2[id].posterURLs[92]}`} alt="" />
+            </Link>
           </div>
           <div className="bodyItemDetails">
-            <h2 className="title">{articles2[id].title}</h2>
+            <a
+              href={`https://www.imdb.com/title/${articles2[id].imdbId}/`}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <h2 className="title">{articles2[id].title}</h2>
+            </a>
             <div className="genres">
               <span className="type">
                 {articles2[id].type[0].toUpperCase() +
@@ -22,7 +30,9 @@ export default function Search({ id, articles2 }) {
               </span>
               {articles2[id].genres.map((element, gid, result) => {
                 return (
-                  <span className="genre">{articles2[id].genres[gid].name}</span>
+                  <span className="genre">
+                    {articles2[id].genres[gid].name}
+                  </span>
                 );
               }, 80)}
             </div>
