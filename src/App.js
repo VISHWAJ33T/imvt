@@ -8,15 +8,41 @@ function App() {
   const [country, setCountry] = useState("in");
   const [type, setType] = useState("all");
   const [genre, setGenre] = useState("28");
-  const [apiKey, setApiKey] = useState(process.env.REACT_APP_IMVT_API_KEY_1)
-  const [services, setServices] = useState(
-    "prime"
-  );
-  let pageArr=[""]
+  const [apiKey, setApiKey] = useState(process.env.REACT_APP_IMVT_API_KEY_1);
+  const [services, setServices] = useState("prime");
+  let pageArr = [""];
   return (
     <div className="app">
-          <Navbar apiKey={apiKey} setApiKey={setApiKey} title={title} country={country} setCountry={setCountry} type={type} genre={genre} services={services} setType={setType} setGenre={setGenre} setServices={setServices} setTitle={setTitle} setKeyword={setKeyword} />
-      <Body apiKey={apiKey} title={title} country={country} setCountry={setCountry} type={type} genre={genre} services={services} setType={setType} setGenre={setGenre} setServices={setServices} setTitle={setTitle} keyword={keyword} pageArr={pageArr} />
+      <Navbar
+        apiKey={apiKey}
+        setApiKey={setApiKey}
+        title={title}
+        country={country}
+        setCountry={setCountry}
+        type={type}
+        genre={genre}
+        services={services}
+        setType={setType}
+        setGenre={setGenre}
+        setServices={setServices}
+        setTitle={setTitle}
+        setKeyword={setKeyword}
+      />
+      <Body
+        apiKey={apiKey}
+        title={title}
+        country={country}
+        setCountry={setCountry}
+        type={type}
+        genre={genre}
+        services={services}
+        setType={setType}
+        setGenre={setGenre}
+        setServices={setServices}
+        setTitle={setTitle}
+        keyword={keyword}
+        pageArr={pageArr}
+      />
     </div>
   );
 }

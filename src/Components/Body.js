@@ -5,6 +5,7 @@ import NotFound from "./NotFound";
 import NotSearch from "./NotSearch";
 import Search from "./Search";
 import Spinner from "./Spinner";
+import NoResults from "./NoResults";
 export default function Body({
   apiKey,
   title,
@@ -36,7 +37,8 @@ export default function Body({
 
   const handlePrevClick = (e) => {
     e.preventDefault();
-    pageArr[pageArr.length-1] && setNextCursor(`&cursor=` + pageArr[pageArr.length-2]);
+    pageArr[pageArr.length - 1] &&
+      setNextCursor(`&cursor=` + pageArr[pageArr.length - 2]);
     pageArr.pop();
   };
   useLayoutEffect(() => {
@@ -91,7 +93,7 @@ export default function Body({
   }
 
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     updateBody();
   }, [apiKey, keyword, country, genre, services, type, width, nextCursor]);
 
@@ -111,7 +113,9 @@ export default function Body({
     >
       {!articles2 && <NotSearch />}
       <LoadingBar color="white" progress={progress} height={1} />
-      {loading1 && <Spinner />}
+      {(loading1 && <Spinner />) ||
+        (articles1 && articles1.length === 0 && <NoResults />)}
+
       {articles2 &&
         articles2.map((element, id, result) => {
           return <Search key={id} id={id} articles2={articles2} />;
@@ -122,16 +126,16 @@ export default function Body({
           return <BodyItem key={id} id={id} articles1={articles1} />;
         }, 80)}
       <div className="pagination">
-        {pageArr[pageArr.length-1] && (
+        {pageArr[pageArr.length - 1] && (
           <button className="prev" onClick={handlePrevClick}>
             Previous
           </button>
         )}
-      {articles.hasMore && (
-        <button className="next" onClick={handleNextClick}>
-          Next
-        </button>
-      )}
+        {articles.hasMore && (
+          <button className="next" onClick={handleNextClick}>
+            Next
+          </button>
+        )}
       </div>
       {!articles1 && !articles2 && <NotFound />}
     </div>

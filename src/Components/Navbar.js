@@ -27,13 +27,6 @@ export default function Navbar({
     setKeyword(value);
   };
 
-  // OnSearch(e);{
-  //   e.preventDefault();
-  //   this.setState({
-  //       fimg: ['https://static.zerochan.net/Emilia.%28Re%3AZero%29.full.2042398.jpg',
-  //       "https://static.zerochan.net/Rem.%28Re%3AZero%29.full.2034957.jpg"]
-  //   })
-//  }/
   return (
     <header>
       <div className="wrapper">
@@ -230,7 +223,7 @@ export default function Navbar({
                   <li>
                     <a
                       onClick={() => {
-                        setServices("zee5,apple,netflix,hotstar");
+                        setServices("zee5,prime,netflix,disney");
                         setSvalue("All");
                       }}
                     >
@@ -247,7 +240,7 @@ export default function Navbar({
                       Amazon Prime
                     </a>
                   </li>
-                  <li value="Apple">
+                  <li>
                     <a
                       onClick={() => {
                         setServices("apple");
@@ -314,6 +307,7 @@ export default function Navbar({
                     <a
                       onClick={() => {
                         setServices("paramount");
+                        setCountry("us")
                         setSvalue("Paramount+");
                       }}
                     >
@@ -369,6 +363,15 @@ export default function Navbar({
                       }}
                     >
                       Api-Key 2
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_3);
+                      }}
+                    >
+                      Api-Key 3
                     </a>
                   </li>
                 </ul>
