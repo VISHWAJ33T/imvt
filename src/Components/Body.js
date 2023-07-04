@@ -127,8 +127,8 @@ export default function Body({
                 <LoadingBar color="white" progress={progress} height={1} />
                 {((loading2 || loading1) && <Spinner />) ||
                   ((articles1 || articles2) &&
-                    articles1.length === 0 &&
-                    articles2.length === 0 && <NoResults />)}
+                    articles1.length === 0 && (!articles2 ||
+                    articles2.length === 0) && <NoResults />)}
 
                 {articles2 &&
                   articles2.map((element, id, result) => {

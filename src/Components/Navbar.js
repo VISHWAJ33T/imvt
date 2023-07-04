@@ -22,7 +22,7 @@ export default function Navbar({
   };
 
   const handleOnClick = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setTitle(value);
     setKeyword(value);
   };
@@ -44,44 +44,42 @@ export default function Navbar({
             </div>
             <ul className="links">
               <li>
-                <a className="desktop-link">
-                  Type: <em>{type}</em>
-                </a>
+                <a className="desktop-link">Api-Key: {apiNo}</a>
                 <input type="checkbox" id="show-features" />
-                <label htmlFor="show-features">
-                  Type: <em>{type}</em>
-                </label>
+                <label htmlFor="show-features">Api-Key: {apiNo}</label>
                 <ul>
                   <li>
                     <a
                       onClick={() => {
-                        setType("all");
+                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_1);
+                        setApiNo("1");
                       }}
                     >
-                      All
+                      Api-Key 1
                     </a>
                   </li>
                   <li>
                     <a
                       onClick={() => {
-                        setType("movie");
+                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_2);
+                        setApiNo("2");
                       }}
                     >
-                      Movie
+                      Api-Key 2
                     </a>
                   </li>
                   <li>
                     <a
                       onClick={() => {
-                        setType("series");
+                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_3);
+                        setApiNo("3");
                       }}
                     >
-                      Series
+                      Api-Key 3
                     </a>
                   </li>
                 </ul>
               </li>
-
               <li>
                 <a className="desktop-link">
                   Genre: <em>{gvalue}</em>
@@ -216,9 +214,13 @@ export default function Navbar({
               </li>
 
               <li>
-                <a className="desktop-link">Services: <em>{svalue}</em></a>
+                <a className="desktop-link">
+                  Services: <em>{svalue}</em>
+                </a>
                 <input type="checkbox" id="show-services" />
-                <label htmlFor="show-services">Services: <em>{svalue}</em></label>
+                <label htmlFor="show-services">
+                  Services: <em>{svalue}</em>
+                </label>
                 <ul>
                   <li>
                     <a
@@ -264,7 +266,7 @@ export default function Navbar({
                     <a
                       onClick={() => {
                         setServices("hbo");
-                        setCountry("us")
+                        setCountry("us");
                         setSvalue("HBO Max");
                       }}
                     >
@@ -275,7 +277,7 @@ export default function Navbar({
                     <a
                       onClick={() => {
                         setServices("hotstar");
-                        setCountry("in")
+                        setCountry("in");
                         setSvalue("Hotstar");
                       }}
                     >
@@ -286,7 +288,7 @@ export default function Navbar({
                     <a
                       onClick={() => {
                         setServices("hulu");
-                        setCountry("us")
+                        setCountry("us");
                         setSvalue("Hulu");
                       }}
                     >
@@ -307,7 +309,7 @@ export default function Navbar({
                     <a
                       onClick={() => {
                         setServices("paramount");
-                        setCountry("us")
+                        setCountry("us");
                         setSvalue("Paramount+");
                       }}
                     >
@@ -318,7 +320,7 @@ export default function Navbar({
                     <a
                       onClick={() => {
                         setServices("peacock");
-                        setCountry("us")
+                        setCountry("us");
                         setSvalue("Peacock");
                       }}
                     >
@@ -338,47 +340,6 @@ export default function Navbar({
                 </ul>
               </li>
 
-              <li>
-                <a className="desktop-link">
-                Api-Key: {apiNo}
-                </a>
-                <input type="checkbox" id="show-keys" />
-                <label htmlFor="show-keys">
-                  Api-Key: {apiNo}
-                </label>
-                <ul>
-                  <li>
-                    <a
-                      onClick={() => {
-                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_1);
-                        setApiNo("1")
-                      }}
-                    >
-                      Api-Key 1
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      onClick={() => {
-                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_2);
-                        setApiNo("2")
-                      }}
-                    >
-                      Api-Key 2
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      onClick={() => {
-                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_3);
-                        setApiNo("3")
-                      }}
-                    >
-                      Api-Key 3
-                    </a>
-                  </li>
-                </ul>
-              </li>
               <li>
                 <a className="desktop-link">
                   Country : <em>{country}</em>
@@ -467,6 +428,44 @@ export default function Navbar({
                       }}
                     >
                       USA
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a className="desktop-link">
+                  Type: <em>{type}</em>
+                </a>
+                <input type="checkbox" id="show-type" />
+                <label htmlFor="show-type">
+                  Type: <em>{type}</em>
+                </label>
+                <ul>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setType("all");
+                      }}
+                    >
+                      All
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setType("movie");
+                      }}
+                    >
+                      Movie
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setType("series");
+                      }}
+                    >
+                      Series
                     </a>
                   </li>
                 </ul>
