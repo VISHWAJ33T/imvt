@@ -10,7 +10,6 @@ function App() {
   const [genre, setGenre] = useState("35");
   const [apiKey, setApiKey] = useState(process.env.REACT_APP_IMVT_API_KEY_1)
   const [services, setServices] = useState(
-    // "netflix,prime.buy,hulu.addon.hbo,peacock.free"
     "netflix"
   );
   return (

@@ -8,6 +8,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+:root {
+  --image-url: url('');
+}
+
 a{
   cursor:pointer;
 }
@@ -16,6 +20,8 @@ a{
   background: #171c24;
   position: fixed;
   width: 100vw;
+  z-index: 1;
+  opacity: 0.95;
 }
 
 .wrapper nav {
@@ -161,9 +167,6 @@ nav .content .links {
   transition: all 0.3s ease;
 }
 
-
-
-
 .content .links ul li a {
   display: block;
   width: 100%;
@@ -209,7 +212,7 @@ nav .content .links {
   }
 }
 
-@media screen and (max-width: 921px) {
+@media screen and (max-width: 1000px) {
   .wrapper .menu-icon {
     display: block;
   }
@@ -363,10 +366,28 @@ ul {
 
 /* BODY CSS STARTS HERE */
 .body {
-  width: 100%;
   padding-top: 80px;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+
+.body::before{
+  content: "";
+  background: var(--image-url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top:70px;
+  left:0px;
+  height:100%;
+  width:100%;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 .spinnerOut{
@@ -390,9 +411,12 @@ ul {
   width: 98vw;
   max-height: 350px;
   background-color: #171c24;
+  opacity: 0.8;
   color: white;
   margin: 5px auto;
   padding: 10px 15px;
+  border-radius: 10px;
+  z-index: 0;
 }
 
 .bodyItem {

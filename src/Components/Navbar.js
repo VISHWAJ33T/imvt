@@ -16,15 +16,24 @@ export default function Navbar({
 }) {
   const [value, setValue] = useState("");
   const [gvalue, setGvalue] = useState("Adventure");
+  const [svalue, setSvalue] = useState("Netflix");
   const handleOnChange = (event) => {
     setValue(event.target.value);
   };
 
-  const handleOnClick = () => {
+  const handleOnClick = (e) => {
+    e.preventDefault()
     setTitle(value);
     setKeyword(value);
   };
 
+  // OnSearch(e);{
+  //   e.preventDefault();
+  //   this.setState({
+  //       fimg: ['https://static.zerochan.net/Emilia.%28Re%3AZero%29.full.2042398.jpg',
+  //       "https://static.zerochan.net/Rem.%28Re%3AZero%29.full.2034957.jpg"]
+  //   })
+//  }/
   return (
     <header>
       <div className="wrapper">
@@ -214,23 +223,35 @@ export default function Navbar({
               </li>
 
               <li>
-                <a className="desktop-link">Services: {services}</a>
+                <a className="desktop-link">Services: <em>{svalue}</em></a>
                 <input type="checkbox" id="show-services" />
-                <label htmlFor="show-services">Services: {services}</label>
+                <label htmlFor="show-services">Services: <em>{svalue}</em></label>
                 <ul>
                   <li>
                     <a
                       onClick={() => {
-                        setServices("prime");
+                        setServices("zee5,apple,netflix,hotstar");
+                        setSvalue("All");
                       }}
                     >
-                      Amazon Prime
+                      All
                     </a>
                   </li>
                   <li>
                     <a
                       onClick={() => {
+                        setServices("prime");
+                        setSvalue("Amazon Prime");
+                      }}
+                    >
+                      Amazon Prime
+                    </a>
+                  </li>
+                  <li value="Apple">
+                    <a
+                      onClick={() => {
                         setServices("apple");
+                        setSvalue("Apple TV");
                       }}
                     >
                       Apple
@@ -240,6 +261,7 @@ export default function Navbar({
                     <a
                       onClick={() => {
                         setServices("disney");
+                        setSvalue("Disney");
                       }}
                     >
                       Disney
@@ -248,10 +270,75 @@ export default function Navbar({
                   <li>
                     <a
                       onClick={() => {
+                        setServices("hbo");
+                        setCountry("us")
+                        setSvalue("HBO Max");
+                      }}
+                    >
+                      HBO Max
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setServices("hotstar");
+                        setCountry("in")
+                        setSvalue("Hotstar");
+                      }}
+                    >
+                      Hotstar
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setServices("hulu");
+                        setCountry("us")
+                        setSvalue("Hulu");
+                      }}
+                    >
+                      Hulu
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
                         setServices("netflix");
+                        setSvalue("Netflix");
                       }}
                     >
                       Netflix
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setServices("paramount");
+                        setSvalue("Paramount+");
+                      }}
+                    >
+                      Paramount+
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setServices("peacock");
+                        setCountry("us")
+                        setSvalue("Peacock");
+                      }}
+                    >
+                      Peacock
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setServices("zee5");
+                        setSvalue("Zee5");
+                      }}
+                    >
+                      Zee5
                     </a>
                   </li>
                 </ul>
