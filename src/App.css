@@ -7,9 +7,8 @@
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
 }
-
 :root {
-  --image-url: url('');
+  --image-url: url('https://www.gamersdecide.com/sites/default/files/loading_screendota.jpg');
 }
 
 a{
@@ -591,3 +590,28 @@ ul {
   width:350px
 }
 /* NOTFOUND CSS ENDS HERE */
+
+/* NEXT BTN */
+.next{
+  padding:10px 20px;
+  width:100px;
+  text-align:center;
+  margin: 5px auto;
+  font-size:20px;
+  color: white;
+  background-color:#171d24;
+  border:0px;
+  border-radius:30px;
+  cursor: pointer;
+}
+.next:hover{
+  background-color:#1d283d;
+  /* transform: scale(1.1); */
+  /* transform: translateX(px); */
+}
+.next:active{
+  background-color:#18202e;
+  transform: scale(1.2);
+  /* transform: translateX(150vw); */
+  transition: 0.3s;
+}

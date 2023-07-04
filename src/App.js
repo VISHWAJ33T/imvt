@@ -4,13 +4,13 @@ import Body from "./Components/Body";
 import Navbar from "./Components/Navbar";
 function App() {
   const [title, setTitle] = useState("");
-  const [keyword, setKeyword] = useState("");
-  const [country, setCountry] = useState("us");
+  const [keyword, setKeyword] = useState("Superhero");
+  const [country, setCountry] = useState("in");
   const [type, setType] = useState("all");
-  const [genre, setGenre] = useState("35");
+  const [genre, setGenre] = useState("28");
   const [apiKey, setApiKey] = useState(process.env.REACT_APP_IMVT_API_KEY_1)
   const [services, setServices] = useState(
-    "netflix"
+    "prime"
   );
   return (
     <div className="app">

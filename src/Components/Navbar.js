@@ -15,8 +15,8 @@ export default function Navbar({
   setServices,
 }) {
   const [value, setValue] = useState("");
-  const [gvalue, setGvalue] = useState("Adventure");
-  const [svalue, setSvalue] = useState("Netflix");
+  const [gvalue, setGvalue] = useState("Action");
+  const [svalue, setSvalue] = useState("Amazon Prime");
   const handleOnChange = (event) => {
     setValue(event.target.value);
   };

@@ -1,28 +1,28 @@
 import React from "react";
-export default function BodyItem({ id, articles }) {
+export default function BodyItem({ id, articles1 }) {
   return (
     <>
       <div className="bodyItems">
         <div className="bodyItem">
-          <div className="bodyItemImage"><a href={`https://www.imdb.com/title/${articles[id].imdbId}/`} rel="noreferrer" target="_blank">
-            <img src={`${articles[id].posterURLs[92]}`} alt="" /></a>
+          <div className="bodyItemImage"><a href={`https://www.imdb.com/title/${articles1[id].imdbId}/`} rel="noreferrer" target="_blank">
+            <img src={`${articles1[id].posterURLs[92]}`} alt="" /></a>
           </div>
           <div className="bodyItemDetails">
-            <h2 className="title">{articles[id].title}</h2>
+            <h2 className="title">{articles1[id].title}</h2>
             <div className="genres">
               <span className="type">
-                {articles[id].type[0].toUpperCase() +
-                  articles[id].type.slice(1)}
+                {articles1[id].type[0].toUpperCase() +
+                  articles1[id].type.slice(1)}
               </span>
               <span className="year">
-                {articles[id].year
-                  ? articles[id].year
-                  : articles[id].firstAirYear}
+                {articles1[id].year
+                  ? articles1[id].year
+                  : articles1[id].firstAirYear}
               </span>
-              {articles[id].genres.map((element, gid, result) => {
+              {articles1[id].genres.map((element, gid, result) => {
                 // console.log(element)
                 return (
-                  <span className="genre">{articles[id].genres[gid].name}</span>
+                  <span className="genre">{articles1[id].genres[gid].name}</span>
                 );
               }, 80)}
             </div>
@@ -30,36 +30,36 @@ export default function BodyItem({ id, articles }) {
             <div  className="ratings">
               <span className="rating">
                 <i  className="fas fa-star" style={{ color: "#ffffff" }}></i>&nbsp;
-                {articles[id].imdbRating}/100
+                {articles1[id].imdbRating}/100
               </span>
               <span className="nofRating">
                 <i  className="fa fa-users" aria-hidden="true"></i>
                 &nbsp;
-                {articles[id].imdbVoteCount}
+                {articles1[id].imdbVoteCount}
               </span>
               <span className="minAge">
                 <i  className="fa fa-user" aria-hidden="true"></i>
                 &ge;
-                {articles[id].advisedMinimumAudienceAge}Yr
+                {articles1[id].advisedMinimumAudienceAge}Yr
               </span>
             </div>
           </div>
         </div>
 
         <div className="bodyItemDetails1">
-          {articles[id].directors ? (
+          {articles1[id].directors ? (
             <p className="directors">
               <b>Directors: </b>
-              {articles[id].directors.join(", ")}
+              {articles1[id].directors.join(", ")}
             </p>
           ) : null}
           <p className="cast">
             <b>Cast: </b>
-            {articles[id].cast.join(", ")}
+            {articles1[id].cast.join(", ")}
           </p>
           <p className="overview">
             <b>Overview: </b>
-            {articles[id].overview}
+            {articles1[id].overview}
           </p>
         </div>
       </div>
