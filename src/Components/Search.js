@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 export default function Search({ id, articles2 }) {
+  const handlePosterClick = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   return (
     <>
       <div className="bodyItems">
         <div className="bodyItem">
           <div className="bodyItemImage">
-            <Link to={`/play/${articles2[id].imdbId}`} target="_blank">
+            <Link to={`/play/${articles2[id].imdbId}`} onClick={handlePosterClick}>
               <img src={`${articles2[id].posterURLs[92]}`} alt="" />
             </Link>
           </div>

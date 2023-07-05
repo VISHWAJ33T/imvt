@@ -15,7 +15,7 @@ export default function Navbar({
 }) {
   const [value, setValue] = useState("");
   const [gvalue, setGvalue] = useState("Action");
-  const [svalue, setSvalue] = useState("Amazon Prime");
+  const [svalue, setSvalue] = useState("All");
   const [apiNo, setApiNo] = useState("1");
   const handleOnChange = (event) => {
     setValue(event.target.value);
@@ -256,6 +256,7 @@ export default function Navbar({
                     <a
                       onClick={() => {
                         setServices("disney");
+                        setCountry("us");
                         setSvalue("Disney");
                       }}
                     >

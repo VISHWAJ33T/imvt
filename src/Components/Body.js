@@ -34,7 +34,6 @@ export default function Body({
     e.preventDefault();
     articles.hasMore && setNextCursor(`&cursor=` + articles.nextCursor);
     pageArr.push(articles.nextCursor);
-    console.log(pageArr);
   };
 
   const handlePrevClick = (e) => {
@@ -43,6 +42,7 @@ export default function Body({
       setNextCursor(`&cursor=` + pageArr[pageArr.length - 2]);
     pageArr.pop();
   };
+
   useLayoutEffect(() => {
     setWidth(ref.current.offsetWidth);
   }, []);
@@ -117,51 +117,54 @@ export default function Body({
             }
       }
     >
+
       <BrowserRouter>
-        <Routes>
-          <Route
+        {/* <Routes> */}
+        {/* <Route
             path="/"
-            element={
-              <>
-                {!articles2 && <NotSearch />}
-                <LoadingBar color="white" progress={progress} height={1} />
-                {((loading2 || loading1) && <Spinner />) ||
-                  ((articles1 || articles2) &&
-                    articles1.length === 0 && (!articles2 ||
-                    articles2.length === 0) && <NoResults />)}
+            element={ */}
+        <>
+          <Routes>
+            <Route
+              path={`/play/:imbdid`}
+              element={
+                <MediaPlayer articles1={articles1} articles2={articles2} />
+              }
+            />
+          </Routes>
+          {!articles2 && <NotSearch />}
+          <LoadingBar color="white" progress={progress} height={1} />
+          {((loading2 || loading1) && <Spinner />) ||
+            ((articles1 || articles2) &&
+              articles1.length === 0 &&
+              (!articles2 || articles2.length === 0) && <NoResults />)}
+          {articles2 &&
+            articles2.map((element, id, result) => {
+              return <Search key={id} id={id} articles2={articles2} />;
+            }, 80)}
 
-                {articles2 &&
-                  articles2.map((element, id, result) => {
-                    return <Search key={id} id={id} articles2={articles2} />;
-                  }, 80)}
+          {articles1 &&
+            articles1.map((element, id, result) => {
+              return <BodyItem key={id} id={id} articles1={articles1} />;
+            }, 80)}
+          <div className="pagination">
+            {pageArr[pageArr.length - 1] && (
+              <button className="prev" onClick={handlePrevClick}>
+                Previous
+              </button>
+            )}
+            {articles.hasMore && (
+              <button className="next" onClick={handleNextClick}>
+                Next
+              </button>
+            )}
+          </div>
+          {!articles1 && !articles2 && <NotFound />}
+        </>
+        {/* }
+           /> */}
 
-                {articles1 &&
-                  articles1.map((element, id, result) => {
-                    return <BodyItem key={id} id={id} articles1={articles1} />;
-                  }, 80)}
-                <div className="pagination">
-                  {pageArr[pageArr.length - 1] && (
-                    <button className="prev" onClick={handlePrevClick}>
-                      Previous
-                    </button>
-                  )}
-                  {articles.hasMore && (
-                    <button className="next" onClick={handleNextClick}>
-                      Next
-                    </button>
-                  )}
-                </div>
-                {!articles1 && !articles2 && <NotFound />}
-              </>
-            }
-          />
-          <Route
-            path={`/play/:imbdid`}
-            element={
-              <MediaPlayer articles1={articles1} articles2={articles2} />
-            }
-          />
-        </Routes>
+        {/* </Routes> */}
       </BrowserRouter>
     </div>
   );

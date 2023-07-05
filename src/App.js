@@ -9,7 +9,7 @@ function App() {
   const [type, setType] = useState("all");
   const [genre, setGenre] = useState("28");
   const [apiKey, setApiKey] = useState(process.env.REACT_APP_IMVT_API_KEY_1);
-  const [services, setServices] = useState("prime");
+  const [services, setServices] = useState("zee5,prime,netflix,disney");
   let pageArr = [""];
   return (
     <div className="app">
