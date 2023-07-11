@@ -13,7 +13,6 @@ Normal Text
 
 <p align="center">
   <b>Desktop</b>
-  <hr>
 </p>
 
 
