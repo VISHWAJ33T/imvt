@@ -1,6 +1,7 @@
 <p align="center">
   <img src=screenshots/Logo.png alt="ImVt Logo" >
 </p>
+
 # IMVT Website
 Welcome to IMVT (Internet Movie and TV Show Tracker), a website that allows you to search for any movie or series and retrieve detailed information about it. With IMVT, you can find the title, poster, year of release, genres, IMDb rating, number of people who rated it, minimum age to watch, names of directors and cast members, and an overview of the movie or series.
 
