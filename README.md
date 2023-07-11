@@ -11,10 +11,13 @@ You can access the live site of IMVT by visiting [imvt.live](https://imvt.live).
 Here are some screenshots of the IMVT website:
 
 ![PC](screenshots/screenshot1.png)
+*Desktop view*
 
 ![Mobile](screenshots/screenshot2.png)
+*Mobile view*
 
 ![Tablet](screenshots/screenshot3.png)
+*Tablet view*
 
 
 ## Run Locally
