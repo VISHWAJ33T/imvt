@@ -20,7 +20,7 @@
 }
 
 :root {
-  --image-url: url('https://www.gamersdecide.com/sites/default/files/loading_screendota.jpg');
+  --image-url: url('https://runforthehillslondon.files.wordpress.com/2013/08/film-wallpaper-square-v2.jpg');
 }
 
 *::-webkit-scrollbar {
@@ -414,7 +414,7 @@ ul {
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .spinnerOut {

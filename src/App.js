@@ -4,7 +4,7 @@ import Body from "./Components/Body";
 import Navbar from "./Components/Navbar";
 function App() {
   const [title, setTitle] = useState("");
-  const [keyword, setKeyword] = useState("Superhero");
+  const [keyword, setKeyword] = useState("superhero");
   const [country, setCountry] = useState("in");
   const [type, setType] = useState("all");
   const [genre, setGenre] = useState("28");

@@ -47,7 +47,7 @@ export default function Body({
     setWidth(ref.current.offsetWidth);
   }, []);
 
-  let apiURL = `https://streaming-availability.p.rapidapi.com/v2/search/basic?rapidapi-key=${apiKey}&country=${country}&show_type=${type}&services=${services}&genre=${genre}&keyword=${keyword}${nextCursor}`;
+  let apiURL = `https://streaming-availability.p.rapidapi.com/v2/search/basic?rapidapi-key=${apiKey}&country=${country}&show_type=${type}&services=${services}&genre=${genre}&keyword=${keyword}&${nextCursor}`;
   const updateBody = async () => {
     setProgress(10);
     setLoading1(true);
@@ -101,6 +101,7 @@ export default function Body({
 
   useEffect(() => {
     updateSearch();
+    updateBody();
   }, [apiKey, keyword, country, genre, services, type]);
 
   return (
@@ -117,12 +118,7 @@ export default function Body({
             }
       }
     >
-
       <BrowserRouter>
-        {/* <Routes> */}
-        {/* <Route
-            path="/"
-            element={ */}
         <>
           <Routes>
             <Route
@@ -133,7 +129,7 @@ export default function Body({
             />
           </Routes>
           {!articles2 && <NotSearch />}
-          <LoadingBar color="white" progress={progress} height={1} />
+          <LoadingBar color="brown" progress={progress} height={3} />
           {((loading2 || loading1) && <Spinner />) ||
             ((articles1 || articles2) &&
               articles1.length === 0 &&
@@ -142,7 +138,6 @@ export default function Body({
             articles2.map((element, id, result) => {
               return <Search key={id} id={id} articles2={articles2} />;
             }, 80)}
-
           {articles1 &&
             articles1.map((element, id, result) => {
               return <BodyItem key={id} id={id} articles1={articles1} />;
@@ -161,10 +156,6 @@ export default function Body({
           </div>
           {!articles1 && !articles2 && <NotFound />}
         </>
-        {/* }
-           /> */}
-
-        {/* </Routes> */}
       </BrowserRouter>
     </div>
   );

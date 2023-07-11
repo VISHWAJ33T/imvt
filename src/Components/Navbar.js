@@ -28,7 +28,7 @@ export default function Navbar({
   };
 
   return (
-    <header>
+    <nav>
       <div className="wrapper">
         <nav>
           <input type="checkbox" id="show-search" />
@@ -38,13 +38,15 @@ export default function Navbar({
           </label>
           <div className="content">
             <div className="logo">
-              <a href="/">
-                <img src={Logo} className="logoImg" alt="" />
+              <a href="/" title="Go to Home">
+                <img src={Logo} className="logoImg" alt="IMVT Logo" />
               </a>
             </div>
             <ul className="links">
               <li>
-                <a className="desktop-link">Api-Key: {apiNo}</a>
+                <h2>
+                  <a className="desktop-link">Api-Key: {apiNo}</a>
+                </h2>
                 <input type="checkbox" id="show-features" />
                 <label htmlFor="show-features">Api-Key: {apiNo}</label>
                 <ul>
@@ -54,6 +56,7 @@ export default function Navbar({
                         setApiKey(process.env.REACT_APP_IMVT_API_KEY_1);
                         setApiNo("1");
                       }}
+                      title="Select API Key 1"
                     >
                       Api-Key 1
                     </a>
@@ -64,6 +67,7 @@ export default function Navbar({
                         setApiKey(process.env.REACT_APP_IMVT_API_KEY_2);
                         setApiNo("2");
                       }}
+                      title="Select API Key 2"
                     >
                       Api-Key 2
                     </a>
@@ -74,6 +78,7 @@ export default function Navbar({
                         setApiKey(process.env.REACT_APP_IMVT_API_KEY_3);
                         setApiNo("3");
                       }}
+                      title="Select API Key 3"
                     >
                       Api-Key 3
                     </a>
@@ -81,9 +86,11 @@ export default function Navbar({
                 </ul>
               </li>
               <li>
-                <a className="desktop-link">
-                  Genre: <em>{gvalue}</em>
-                </a>
+                <h2>
+                  <a className="desktop-link">
+                    Genre: <em>{gvalue}</em>
+                  </a>
+                </h2>
                 <input type="checkbox" id="show-items" />
                 <label htmlFor="show-items">
                   Genre: <em>{gvalue}</em>
@@ -95,6 +102,7 @@ export default function Navbar({
                         setGenre("28");
                         setGvalue("Action");
                       }}
+                      title="Select Action genre"
                     >
                       {" "}
                       Action
@@ -214,9 +222,11 @@ export default function Navbar({
               </li>
 
               <li>
-                <a className="desktop-link">
-                  Services: <em>{svalue}</em>
-                </a>
+                <h2>
+                  <a className="desktop-link">
+                    Services: <em>{svalue}</em>
+                  </a>
+                </h2>
                 <input type="checkbox" id="show-services" />
                 <label htmlFor="show-services">
                   Services: <em>{svalue}</em>
@@ -342,9 +352,11 @@ export default function Navbar({
               </li>
 
               <li>
-                <a className="desktop-link">
-                  Country : <em>{country}</em>
-                </a>
+                <h2>
+                  <a className="desktop-link">
+                    Country : <em>{country}</em>
+                  </a>
+                </h2>
                 <input type="checkbox" id="show-things" />
                 <label htmlFor="show-things">
                   Country : <em>{country}</em>
@@ -434,9 +446,11 @@ export default function Navbar({
                 </ul>
               </li>
               <li>
-                <a className="desktop-link">
-                  Type: <em>{type}</em>
-                </a>
+                <h2>
+                  <a className="desktop-link">
+                    Type: <em>{type}</em>
+                  </a>
+                </h2>
                 <input type="checkbox" id="show-type" />
                 <label htmlFor="show-type">
                   Type: <em>{type}</em>
@@ -490,6 +504,6 @@ export default function Navbar({
           </form>
         </nav>
       </div>
-    </header>
+    </nav>
   );
 }
