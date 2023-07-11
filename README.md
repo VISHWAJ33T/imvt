@@ -9,7 +9,6 @@ You can access the live site of IMVT by visiting [imvt.live](https://imvt.live).
 ## Screenshots
 
 Here are some screenshots of the IMVT website:
-Normal Text
 
 <p align="center">
   <b>Desktop</b>
