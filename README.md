@@ -9,15 +9,20 @@ You can access the live site of IMVT by visiting [imvt.live](https://imvt.live).
 ## Screenshots
 
 Here are some screenshots of the IMVT website:
+Normal Text
+
+<p align="center">
+  <b>Desktop</b>
+  <hr>
+</p>
+
 
 ![PC](screenshots/screenshot1.png)
-*Desktop view*
 
-![Mobile](screenshots/screenshot2.png)
-*Mobile view*
 
-![Tablet](screenshots/screenshot3.png)
-*Tablet view*
+Mobile          |  Tablet
+:-------------------------:|:-------------------------:
+![Mobile](screenshots/screenshot2.png)|![Tablet](screenshots/screenshot3.png)|
 
 
 ## Run Locally
