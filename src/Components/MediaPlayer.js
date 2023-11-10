@@ -139,7 +139,7 @@ export default function MediaPlayer() {
       }`
     );
     iframeRef.current.src = extlink;
-  }, [imbdid, type, ytid]);
+  }, [imbdid, type, ytid, season, episode]);
 
   return (
     <>
