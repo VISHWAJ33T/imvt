@@ -45,48 +45,6 @@ export default function Navbar({
             <ul className="links">
               <li>
                 <h2>
-                  <a className="desktop-link">Api-Key: {apiNo}</a>
-                </h2>
-                <input type="checkbox" id="show-features" />
-                <label htmlFor="show-features">Api-Key: {apiNo}</label>
-                <ul>
-                  <li>
-                    <a
-                      onClick={() => {
-                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_1);
-                        setApiNo("1");
-                      }}
-                      title="Select API Key 1"
-                    >
-                      Api-Key 1
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      onClick={() => {
-                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_2);
-                        setApiNo("2");
-                      }}
-                      title="Select API Key 2"
-                    >
-                      Api-Key 2
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      onClick={() => {
-                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_3);
-                        setApiNo("3");
-                      }}
-                      title="Select API Key 3"
-                    >
-                      Api-Key 3
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h2>
                   <a className="desktop-link">
                     Genre: <em>{gvalue}</em>
                   </a>
@@ -481,6 +439,48 @@ export default function Navbar({
                       }}
                     >
                       Series
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h2>
+                  <a className="desktop-link">Api-Key: {apiNo}</a>
+                </h2>
+                <input type="checkbox" id="show-features" />
+                <label htmlFor="show-features">Api-Key: {apiNo}</label>
+                <ul>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_1);
+                        setApiNo("1");
+                      }}
+                      title="Select API Key 1"
+                    >
+                      Api-Key 1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_2);
+                        setApiNo("2");
+                      }}
+                      title="Select API Key 2"
+                    >
+                      Api-Key 2
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => {
+                        setApiKey(process.env.REACT_APP_IMVT_API_KEY_3);
+                        setApiNo("3");
+                      }}
+                      title="Select API Key 3"
+                    >
+                      Api-Key 3
                     </a>
                   </li>
                 </ul>

@@ -8,6 +8,7 @@ export default function Search({ id, articles2 }) {
 
   const title = articles2[id].title;
   const imdbId = articles2[id].imdbId;
+  const ytid = articles2[id].youtubeTrailerVideoId;
   const posterURL = articles2[id].posterURLs[92];
   const year = articles2[id].year || articles2[id].firstAirYear;
   const type = articles2[id].type[0].toUpperCase() + articles2[id].type.slice(1);
@@ -22,7 +23,7 @@ export default function Search({ id, articles2 }) {
       <div className="bodyItems">
         <div className="bodyItem">
           <div className="bodyItemImage">
-            <Link to={`/play/${imdbId}`} onClick={handlePosterClick}>
+            <Link to={`/play/${imdbId}/${type}/${ytid}`} onClick={handlePosterClick}>
               <img src={posterURL} alt={`${title} Poster`} />
             </Link>
           </div>

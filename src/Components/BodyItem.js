@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 export default function BodyItem({ id, articles1 }) {
@@ -11,8 +11,14 @@ export default function BodyItem({ id, articles1 }) {
       <div className="bodyItems">
         <div className="bodyItem">
           <div className="bodyItemImage">
-            <Link to={`/play/${articles1[id].imdbId}`} onClick={handlePosterClick}>
-              <img src={`${articles1[id].posterURLs[92]}`} alt={`${articles1[id].title} poster`} />
+            <Link
+              to={`/play/${articles1[id].imdbId}/${articles1[id].type}/${articles1[id].youtubeTrailerVideoId}`}
+              onClick={handlePosterClick}
+            >
+              <img
+                src={`${articles1[id].posterURLs[92]}`}
+                alt={`${articles1[id].title} poster`}
+              />
             </Link>
           </div>
           <div className="bodyItemDetails">
@@ -22,14 +28,22 @@ export default function BodyItem({ id, articles1 }) {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <h2 className="title">{articles1[id].title}</h2>
+              <h2 className="title">
+                {articles1[id].title}
+                {articles1[id].title !== articles1[id].originalTitle
+                  ? `/${articles1[id].originalTitle}`
+                  : null}
+              </h2>
             </Link>
             <div className="genres">
               <span className="type">
-                {articles1[id].type[0].toUpperCase() + articles1[id].type.slice(1)}
+                {articles1[id].type[0].toUpperCase() +
+                  articles1[id].type.slice(1)}
               </span>
               <span className="year">
-                {articles1[id].year ? articles1[id].year : articles1[id].firstAirYear}
+                {articles1[id].year
+                  ? articles1[id].year
+                  : articles1[id].firstAirYear}
               </span>
               {articles1[id].genres.map((element, gid) => (
                 <span key={gid} className="genre">
